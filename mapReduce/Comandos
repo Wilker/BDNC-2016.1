@@ -2,7 +2,7 @@ compilar
 javac -classpath /usr/lib/hadoop/*:/usr/lib/hadoop/client-0.20/* -d . FollowerCount.java
 
 adicionar ao jar
-jar -cvf wc.jar org/myorg/*.class 
+jar -cvf tc.jar org/myorg/*.class 
 
 rodar job hadoop
 hadoop jar fc.jar org.myorg.FollowerCount /user/wilker/twitter_combined.txt /output/twitter
