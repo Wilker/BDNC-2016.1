@@ -1,0 +1,16 @@
+compilar
+javac -classpath /usr/lib/hadoop/*:/usr/lib/hadoop/client-0.20/* -d . FollowerCount.java
+
+adicionar ao jar
+jar -cvf wc.jar org/myorg/*.class 
+
+rodar job hadoop
+hadoop jar fc.jar org.myorg.FollowerCount /user/wilker/twitter_combined.txt /output/twitter
+
+
+importar dados para o hadoop fs
+sudo -u hdfs hadoop fs -copyFromLocal /home/cloudera/Downloads/twitter.csv /user/wilker
+
+exportar os dados do hadoop
+hadoop fs -cat /output/twitter/* > /home/cloudera/Documents/followersCount
+
